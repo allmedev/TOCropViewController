@@ -190,7 +190,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     //Grey transparent overlay view
     self.overlayView = [[UIView alloc] initWithFrame:self.bounds];
     self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.overlayView.backgroundColor = [self.backgroundColor colorWithAlphaComponent:0.35f];
+    self.overlayView.backgroundColor = [self.backgroundColor colorWithAlphaComponent:0.9f];
     self.overlayView.hidden = NO;
     self.overlayView.userInteractionEnabled = NO;
     [self addSubview:self.overlayView];
@@ -216,7 +216,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     
     
     self.transparentView = [[UIView alloc] initWithFrame:self.bounds];
-    self.transparentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.9];
+    self.transparentView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent: 0.9f];
     self.transparentView.hidden = !self.blackOverlayAlwaysShow;
     self.transparentView.userInteractionEnabled = NO;
     self.transparentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
