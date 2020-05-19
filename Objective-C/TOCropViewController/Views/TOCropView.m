@@ -61,6 +61,9 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 @property (nonatomic, strong) TOCropScrollView *scrollView;         /* The scroll view in charge of panning/zooming the image. */
 @property (nonatomic, strong) UIView *overlayView;                  /* A semi-transparent grey view, overlaid on top of the background image */
 @property (nonatomic, strong) UIView *translucencyView;             /* A blur view that is made visible when the user isn't interacting with the crop view */
+
+@property (nonatomic, strong) UIView *transparentView;             /* A transparent view that is visible when the user interacting with the crop view */
+
 @property (nonatomic, strong) id translucencyEffect;                /* The dark blur visual effect applied to the visual effect view. */
 @property (nonatomic, strong, readwrite) TOCropOverlayView *gridOverlayView;   /* A grid view overlaid on top of the foreground image view's container. */
 @property (nonatomic, strong) CAShapeLayer *circularMaskLayer;      /* Managing the clipping of the foreground container into a circle */
@@ -204,6 +207,13 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
         self.translucencyView = toolbar;
         self.translucencyView.frame = CGRectInset(self.bounds, -1.0f, -1.0f);
     }
+    self.transparentView = [[UIView alloc] initWithFrame:self.bounds];
+    self.transparentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.8];
+    self.translucencyView.hidden = !self.blackOverlayAlwaysShow;
+    self.translucencyView.userInteractionEnabled = NO;
+    self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self addSubview:self.translucencyView];
+    
     self.translucencyView.hidden = self.translucencyAlwaysHidden;
     self.translucencyView.userInteractionEnabled = NO;
     self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
