@@ -185,7 +185,7 @@ The minimum croping aspect ratio. If set, user is prevented from setting croppin
 @property (nonatomic, assign) BOOL translucencyAlwaysHidden;
 
 
-@property (nonatomic, assign) UIColor *overlayColor;
+- (void) updateOverlayColor:(UIColor *)color;
 
 ///*
 // if YES it will always show grid
