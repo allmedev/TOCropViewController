@@ -185,11 +185,7 @@ The minimum croping aspect ratio. If set, user is prevented from setting croppin
 @property (nonatomic, assign) BOOL translucencyAlwaysHidden;
 
 
-/**
- Permanently hides the translucency effect covering the outside bounds of the
- crop box. (Default is NO)
- */
-@property (nonatomic, assign) BOOL blackOverlayAlwaysShow;
+@property (nonatomic, assign) UIColor *overlayColor;
 
 ///*
 // if YES it will always show grid
