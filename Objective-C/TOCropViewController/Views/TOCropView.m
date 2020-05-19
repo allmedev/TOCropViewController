@@ -207,17 +207,20 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
         self.translucencyView = toolbar;
         self.translucencyView.frame = CGRectInset(self.bounds, -1.0f, -1.0f);
     }
-    self.transparentView = [[UIView alloc] initWithFrame:self.bounds];
-    self.transparentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.99];
-    self.translucencyView.hidden = !self.blackOverlayAlwaysShow;
-    self.translucencyView.userInteractionEnabled = NO;
-    self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self addSubview:self.translucencyView];
+
     
     self.translucencyView.hidden = self.translucencyAlwaysHidden;
     self.translucencyView.userInteractionEnabled = NO;
     self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self addSubview:self.translucencyView];
+    
+    
+    self.transparentView = [[UIView alloc] initWithFrame:self.bounds];
+    self.transparentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.9];
+    self.transparentView.hidden = !self.blackOverlayAlwaysShow;
+    self.transparentView.userInteractionEnabled = NO;
+    self.transparentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self addSubview:self.transparentView];
     
     // The forground container that holds the foreground image view
     self.foregroundContainerView = [[UIView alloc] initWithFrame:(CGRect){0,0,200,200}];
