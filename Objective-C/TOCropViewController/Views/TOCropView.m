@@ -208,7 +208,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
         self.translucencyView.frame = CGRectInset(self.bounds, -1.0f, -1.0f);
     }
     self.transparentView = [[UIView alloc] initWithFrame:self.bounds];
-    self.transparentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.8];
+    self.transparentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.99];
     self.translucencyView.hidden = !self.blackOverlayAlwaysShow;
     self.translucencyView.userInteractionEnabled = NO;
     self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
