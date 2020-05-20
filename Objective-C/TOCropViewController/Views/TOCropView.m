@@ -63,6 +63,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 @property (nonatomic, strong) UIView *translucencyView;             /* A blur view that is made visible when the user isn't interacting with the crop view */
 
 @property (nonatomic, strong) id translucencyEffect;                /* The dark blur visual effect applied to the visual effect view. */
+@property (nonatomic, strong, readwrite) TOCropOverlayView *gridOverlayView;   /* A grid view overlaid on top of the foreground image view's container. */
 @property (nonatomic, strong) CAShapeLayer *circularMaskLayer;      /* Managing the clipping of the foreground container into a circle */
 
 /* Gesture Recognizers */
@@ -255,6 +256,11 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 - (void) updateOverlayColor:(UIColor *)color
 {
     self.overlayView.backgroundColor = color;
+}
+
+- (void)setAlwaysHideGrid
+{
+    [self.gridOverlayView removeFromSuperview];
 }
 
 - (void)performInitialSetup

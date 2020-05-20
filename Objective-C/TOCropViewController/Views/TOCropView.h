@@ -42,9 +42,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonnull, nonatomic, strong, readonly) UIImage *image;
 
-/* A grid view overlaid on top of the foreground image view's container. */
-@property (nonatomic, strong, readwrite) TOCropOverlayView *gridOverlayView;
-
 /**
  The cropping style of the crop view (eg, rectangular or circular)
  */
@@ -195,7 +192,7 @@ The minimum croping aspect ratio. If set, user is prevented from setting croppin
 // if NO it will never show grid
 // NOTE : Do not use this method if you want to keep grid hide/show animation
 // */
-//- (void)setAlwaysShowGrid:(BOOL)showGrid;
+- (void)setAlwaysHideGrid;
 //
 ///*
 // if YES it will disable translucency effect
