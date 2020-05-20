@@ -42,6 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonnull, nonatomic, strong, readonly) UIImage *image;
 
+/* A grid view overlaid on top of the foreground image view's container. */
+@property (nonatomic, strong, readwrite) TOCropOverlayView *gridOverlayView;
+
 /**
  The cropping style of the crop view (eg, rectangular or circular)
  */
