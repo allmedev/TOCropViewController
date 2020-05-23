@@ -184,6 +184,12 @@ The minimum croping aspect ratio. If set, user is prevented from setting croppin
  */
 @property (nonatomic, assign) BOOL translucencyAlwaysHidden;
 
+/**
+Disable grid view resizing with PanGesture
+(Default is NO)
+*/
+@property (nonatomic, assign) BOOL disableGridResizing;
+
 
 - (void) updateOverlayColor:(UIColor *)color;
 
